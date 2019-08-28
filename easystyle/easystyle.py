@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 
-class style(object):
+class Style(object):
     #Functions to highlight negative cells
     def fake_highlight_negative(val, color):
         if val < 0:

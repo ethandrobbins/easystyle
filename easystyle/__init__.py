@@ -1,1 +1,1 @@
-from easystyle.easystyle import style
+from easystyle.easystyle import Style
