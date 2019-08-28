@@ -3,6 +3,7 @@ import numpy as np
 import seaborn as sns
 
 class Style(object):
+
     #Functions to highlight negative cells
     def fake_highlight_negative(val, color):
         if val < 0:
@@ -12,7 +13,7 @@ class Style(object):
         return 'color: %s' % colorDum
 
     def highlight_negative(df, col = 'red'):
-        return df.style.applymap(fake_highlight_negative, color = col)
+        return df.style.applymap(Style.fake_highlight_negative, color = col)
 
 
     #Functions to highlight positive cells
@@ -24,7 +25,7 @@ class Style(object):
         return 'color: %s' % colorDum
 
     def highlight_positive(df, col = 'green'):
-        return df.style.applymap(fake_highlight_positive, color = col)
+        return df.style.applymap(Style.fake_highlight_positive, color = col)
 
 
     #Functions used to highlight positive and negative cells
@@ -38,7 +39,7 @@ class Style(object):
         return 'color: %s' % colorDum
 
     def highlight_neg_pos(df, colNeg = 'red', colPos = 'green'):
-        return df.style.applymap(fake_highlight_neg_pos, colorNeg = colNeg, colorPos = colPos)
+        return df.style.applymap(Style.fake_highlight_neg_pos, colorNeg = colNeg, colorPos = colPos)
 
 
     #Functions to highlight the maximum in column(s)
@@ -47,7 +48,7 @@ class Style(object):
         return ['background-color: ' + color if v else '' for v in is_max]
 
     def highlight_max(df, column_names, col='yellow'):
-        return df.style.apply(fake_highlight_max, color=col, subset=column_names)
+        return df.style.apply(Style.fake_highlight_max, color=col, subset=column_names)
 
     #Function to highlight the minimum in column(s)
     def fake_highlight_min(col, color):
@@ -55,7 +56,7 @@ class Style(object):
         return ['background-color: ' + color if v else '' for v in is_min]
 
     def highlight_min(df, column_names, col='orange'):
-        return df.style.apply(fake_highlight_min, color=col, subset=column_names)
+        return df.style.apply(Style.fake_highlight_min, color=col, subset=column_names)
 
     #Functions to highlight outliers
     def fake_highlight_outlier_lower(col, color):
@@ -73,7 +74,7 @@ class Style(object):
         return ['background-color: ' + color if v else '' for v in top]
 
     def highlight_outlier(df, column_names, colLow='red', colUp='red'):
-        return df.style.apply(fake_highlight_outlier_lower, color=colLow, subset=column_names).apply(fake_highlight_outlier_upper, color=colUp, subset=column_names)
+        return df.style.apply(Style.fake_highlight_outlier_lower, color=colLow, subset=column_names).apply(Style.fake_highlight_outlier_upper, color=colUp, subset=column_names)
 
     #Function to highlight NaN values
     def highlight_NaN(df, color = 'red'):
