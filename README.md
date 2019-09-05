@@ -33,10 +33,8 @@ We create a DataFrame to be used in the examples. We edit some cells to contain 
     def highlight_negative(df, col = 'red'):
 
 In order to use highlight_negative, the user must provide the dataframe. The user does not need to provide a color, but may do so if they want a color other than red. To run the function:
-
-    df = es.highlight_negative(df, color)
     
-![Highlight Negative Values](images/highlightMin.png "Highlight Negative values")
+![Highlight Negative Values](images/negativeHigh.png "Highlight Negative values")
 
 ## Highlight Positive Values
 
@@ -44,7 +42,7 @@ In order to use highlight_negative, the user must provide the dataframe. The use
 
 This function follows similarly to the function above. To run the function:
 
-    df = es.highlight_positive(df, color)
+![Highlight Positive Values](images/positiveHigh.png "Highlight Positive values")
 
 ## Highlight Negative and Positive Values
 
@@ -52,7 +50,7 @@ This function follows similarly to the function above. To run the function:
 
 Follows from above. To run the function:
 
-    df = es.highlight_neg_pos(df, color_neg, color_pos)
+![Highlight Negative/Positive Values](images/negposHighlight.png "Highlight Negative/Positive values")
 
 ## Highlight Maximum Value
 
@@ -60,8 +58,7 @@ Follows from above. To run the function:
 
 The function is fed an additional variable, the column names. `column_names` is an array of the column names that you wish to find the maximum in. For example:
 
-    column_names = ['A', 'B', 'C']
-    df = es.highlight_max(df, column_names, color)
+![Highlight Max Values](images/highlightMax.png "Highlight Max values")
 
 ## Highlight Minimum Value
 
@@ -69,8 +66,7 @@ The function is fed an additional variable, the column names. `column_names` is 
 
 Follows similarly to highlighting a maximum value. For example:
 
-    column_names = ['A', 'B', 'C']
-    df = es.highlight_min(df, column_names, color)
+![Highlight Min Values](images/highlightMin.png "Highlight Min values")
 
 ## Highlight Outliers
 
@@ -78,7 +74,7 @@ Follows similarly to highlighting a maximum value. For example:
 
 This function uses the IQR method in order to find outliers. Again, `column_names` is a array of column names. For example:
 
-    df = es.highlight_outlier(df, column_names, colorLower, colorUpper)
+![Highlight Outlier Values](images/outlier.png "Highlight Outlier values")
 
 ## Highlight NaN Values
 
@@ -86,7 +82,7 @@ This function uses the IQR method in order to find outliers. Again, `column_name
 
 If any NaN values are detected, they are highlighted. For example:
 
-    df = es.highlight_NaN(df, color)
+![Highlight NaN Values](images/nanHigh.png "Highlight NaN values")
 
 ## Give a Gradient
 
@@ -94,5 +90,4 @@ If any NaN values are detected, they are highlighted. For example:
 
 This function uses the gradients provided by the Seaborn package. For example:
 
-    df = es.highlight_gradient(df, color)
-
+![Gradient](images/gradient.png "Gradient")
