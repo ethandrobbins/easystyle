@@ -50,7 +50,7 @@ This function follows similarly to the function above. To run the function:
 
 Follows from above. To run the function:
 
-![Highlight Negative/Positive Values](images/negposHighlight.png "Highlight Negative/Positive values")
+![Highlight Negative/Positive Values](images/negPosHighlight.png "Highlight Negative/Positive values")
 
 ## Highlight Maximum Value
 
