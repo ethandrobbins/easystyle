@@ -91,3 +91,5 @@ If any NaN values are detected, they are highlighted. For example:
 This function uses the gradients provided by the Seaborn package. For example:
 
 ![Gradient](images/gradient.png "Gradient")
+
+In the example, note that you can provide a gradient onto a DataFrame that has NaN values but it throws a warning. I simply removed the NaN value, changed it to 0, in order to clean up the picture, i.e. not have a warning.
