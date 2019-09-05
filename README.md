@@ -17,6 +17,17 @@ The best way to import easystyle is:
 
 This is since it makes it simpler to call functions when using the package. For the following examples we will assume this importing method.
 
+## Creating an Example DataFrame
+
+We create a DataFrame to be used in the examples. We edit some cells to contain outliers as well as NaN values:
+
+    import numpy as np
+    import pandas as pd
+    df = pd.DataFrame(np.random.randint(-100,100,size=(10, 4)), columns=list('ABCD'))
+    df['A'][7] = float('NaN')
+    df['C'][2] = 642
+    df['D'][6] = -245
+
 ## Highlight Negative Values
 
     def highlight_negative(df, col = 'red'):
@@ -24,6 +35,8 @@ This is since it makes it simpler to call functions when using the package. For 
 In order to use highlight_negative, the user must provide the dataframe. The user does not need to provide a color, but may do so if they want a color other than red. To run the function:
 
     df = es.highlight_negative(df, color)
+    
+![Highlight Negative Values](images/highlightMin.png "Highlight Negative values")
 
 ## Highlight Positive Values
 
